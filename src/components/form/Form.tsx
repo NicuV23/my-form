@@ -53,8 +53,8 @@ const Form: React.FC<FormProps> = ({
           onChange={onSelectChange}
         >
           <option value="">Select an option</option>
-          <option value="option 1">Option A</option>
-          <option value="option 2">Option B</option>
+          <option value="option 1">Option 1</option>
+          <option value="option 2">Option 2</option>
         </select>
       </label>
       <br />
@@ -66,8 +66,8 @@ const Form: React.FC<FormProps> = ({
           onChange={onSelectChange}
         >
           <option value="">Select an option</option>
-          <option value="option A">Choice 1</option>
-          <option value="option B">Choice 2</option>
+          <option value="option A">Choice A</option>
+          <option value="option B">Choice B</option>
         </select>
       </label>
       <br />
