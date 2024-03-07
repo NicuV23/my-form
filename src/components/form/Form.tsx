@@ -2,6 +2,7 @@ import React from "react";
 import "./Form.css";
 
 interface FormData {
+  id?: number;
   name: string;
   phoneNumber: string;
   select1: string;
@@ -70,7 +71,9 @@ const Form: React.FC<FormProps> = ({
         </select>
       </label>
       <br />
-      <button type="submit">Submit</button>
+      <button className="submit" type="submit">
+        {formData.id ? "Save" : "Submit"}
+      </button>
     </form>
   );
 };
