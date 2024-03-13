@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Form.css";
 
 interface FormData {
@@ -16,12 +16,23 @@ interface FormProps {
   onSelectChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
+const URL = "http://localhost:3001/api/test";
+
 const Form: React.FC<FormProps> = ({
   formData,
   onSubmit,
   onInputChange,
   onSelectChange,
 }) => {
+  const fetchForm = async () => {
+    const response = await fetch(URL);
+    const test = await response.json();
+    console.log(test);
+  };
+  useEffect(() => {
+    fetchForm();
+  }, []);
+
   return (
     <form onSubmit={onSubmit} className="form-container">
       <label>
