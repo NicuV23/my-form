@@ -34,7 +34,7 @@ const App: React.FC = () => {
     const { name, value } = event.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     if (
@@ -56,6 +56,16 @@ const App: React.FC = () => {
 
         setEditItem(null);
       } else {
+        const URL = "http://localhost:3001/api/test";
+
+        const response = await fetch(URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formItems),
+        });
+
         setFormItems((prevItems) => [
           ...prevItems,
           { ...(formData as FormDataItem), id: Date.now() },

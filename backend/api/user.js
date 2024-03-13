@@ -9,4 +9,15 @@ router.get("/test", async (req, res) => {
   }
 });
 
+router.post("/test", async (req, res) => {
+  try {
+    const data = req.body;
+    console.log(data);
+
+    return res.status(200).send("Trimis");
+  } catch (error) {
+    console.log("Error");
+  }
+});
+
 module.exports = router;
